@@ -30,22 +30,15 @@ void print_board() {
 bool check_win(char player)
 {
   // Checking to see if the player has won the game
-  return board[0][0] == player && board[0][1] == player &&
-    board[0][2] == player || // rows
-    board[1][0] == player && board[1][1] == player &&
-    board[1][2] == player ||
-    board[2][0] == player && board[2][1] == player &&
-    board[2][2] == player ||
-    board[0][0] == player && board[1][0] == player &&
-    board[2][0] == player || // column
-    board[0][1] == player && board[1][1] == player &&
-    board[2][1] == player ||
-    board[0][2] == player && board[1][2] == player &&
-    board[2][2] == player ||
-    board[0][0] == player && board[1][1] == player &&
-    board[2][2] == player || // diag
-    board[2][0] == player && board[1][1] == player &&
-    board[0][2] == player;
+  return
+    board[0][0] == player && board[0][1] == player && board[0][2] == player || // rows
+    board[1][0] == player && board[1][1] == player && board[1][2] == player ||
+    board[2][0] == player && board[2][1] == player && board[2][2] == player ||
+    board[0][0] == player && board[1][0] == player && board[2][0] == player || // column
+    board[0][1] == player && board[1][1] == player && board[2][1] == player ||
+    board[0][2] == player && board[1][2] == player && board[2][2] == player ||
+    board[0][0] == player && board[1][1] == player && board[2][2] == player || // diag
+    board[2][0] == player && board[1][1] == player && board[0][2] == player;
 }
 bool check_tie()
 {
@@ -133,18 +126,10 @@ int main()
 
     if (game_choice == 'Y' || game_choice == 'y') {
       create_board('-');
-      cout << "Player " << player << " won " << player_wins
-        << " times.\nPlayer " << player_ai << " won " << ai_wins
-        << " times.\n"
-        << endl;
+      cout << "Player " << player << " won " << player_wins << " times.\nPlayer " << player_ai << " won " << ai_wins << " times.\n" << endl;
       continue;
     } else if (game_choice == 'N' || game_choice == 'n') {
-      cout << "Player " << player << " won " << player_wins
-        << " times.\nPlayer " << player_ai << " won " << ai_wins
-        << " times.\n"
-        << endl;
+      cout << "Player " << player << " won " << player_wins << " times.\nPlayer " << player_ai << " won " << ai_wins << " times.\n" << endl;
       break;
-    } else {
-      cout << "Sorry that's not quiet right.\nEnter a Y for yes or a N for "
-        "no.\n";
- } } }
+    } else cout << "Sorry that's not quiet right.\nEnter a Y for yes or a N for no.\n";
+ } }
